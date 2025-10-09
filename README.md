@@ -1,124 +1,44 @@
-CRUD-Basic (Usuários)
+# CRUD-Basic
 
-Projeto de CRUD de usuários desenvolvido em Node.js, organizado de forma modular, seguindo boas práticas de desenvolvimento e arquitetura de software.
+Um projeto backend simples para gerenciar usuários com operações de **Create, Read, Update e Delete (CRUD)**.
 
-🧩 Tecnologias utilizadas
+---
 
-Node.js – Runtime JavaScript do lado do servidor
+## 🛠️ Sobre o Projeto
 
-Express.js – Framework web para criação de APIs
+O **CRUD-Basic** foi desenvolvido para ilustrar os fundamentos de uma API REST organizada e modular em Node.js. É ideal para quem está aprendendo backend, arquitetura de APIs, e boas práticas de manipulação de dados.
 
-MySQL / MariaDB – Banco de dados relacional
+O principal foco é o gerenciamento de usuários, com atributos como nome, email, senha (criptografada), idade e status.
 
-bcrypt – Criptografia de senhas
+---
 
-nodemon – Hot reload durante desenvolvimento
+## 📂 Principais Funcionalidades
 
-📂 Estrutura do projeto
-crud-basic/
-├─ crud-controllers/       # Lógica do negócio (Controllers)
-│  └─ usuarioController.js
-├─ crud-infrastructure/    # Infraestrutura do projeto
-│  ├─ connection.js        # Conexão com MySQL
-│  └─ table.js             # Script para criação de tabelas
-├─ crud-models/            # Models (representação de dados)
-│  └─ usuarioModel.js
-├─ crud-routes/            # Rotas da aplicação
-│  ├─ index.js             # Arquivo principal de rotas
-│  └─ routes.js            # Definição das rotas
-├─ tools.js                # Funções utilitárias
-├─ index.js                # Entry point do servidor
-├─ package.json
-├─ package-lock.json
-└─ .gitignore
+- Criar um usuário  
+- Listar todos os usuários  
+- Obter usuário por ID  
+- Atualizar dados de um usuário  
+- Deletar usuário  
+- Validação simples de dados  
+- Senha armazenada de forma segura (criptografia)  
 
-⚡ Objetivo do projeto
+---
 
-Desenvolver um CRUD completo de usuários, seguindo arquitetura MVC (Model-View-Controller)
+## 📁 Organização do Código
 
-Garantir segurança no armazenamento de senhas usando bcrypt
+- **crud-controllers/** – código das controllers, com lógica de requisições  
+- **crud-infrastructure/** – conexão com banco de dados, scripts de criação de tabelas  
+- **crud-models/** – definição dos modelos/entidades (usuário)  
+- **crud-routes/** – rotas da API  
+- **index.js** – ponto de entrada da aplicação  
+- **tools.js** – utilitários comuns  
+- **package.json** / **.gitignore** — configurações do projeto  
 
-Estruturar o projeto de forma modular, facilitando manutenção e escalabilidade
+---
 
-Praticar boas práticas de versionamento com Git e documentação de código
+## 🚀 Como Executar Localmente
 
-🚀 Funcionalidades
-
-Criar usuário → com nome, email, senha criptografada, idade e status
-
-Listar usuários → visualizar todos os usuários cadastrados
-
-Atualizar usuário → alterar informações específicas
-
-Deletar usuário → remover usuário do banco
-
-Validação básica → campos obrigatórios e consistência de dados
-
-📦 Como rodar o projeto
-
-Clonar o repositório:
-
-git clone https://github.com/seuusuario/crud-basic.git
-cd crud-basic
-
-
-Instalar dependências:
-
-npm install
-
-
-Criar o banco de dados e tabela:
-
-CREATE DATABASE crud_basic;
-
-USE crud_basic;
-
-CREATE TABLE IF NOT EXISTS usuarios (
-  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  data_cadastro DATE,
-  nome VARCHAR(255),
-  email VARCHAR(255) NOT NULL UNIQUE,
-  senha_aleatoria VARCHAR(255) NOT NULL,
-  idade INT,
-  status ENUM("ativo","inativo","cancelado") DEFAULT "inativo"
-);
-
-
-Configurar conexão no crud-infrastructure/connection.js com usuário e senha do MySQL.
-
-Rodar o servidor em modo desenvolvimento:
-
-npx nodemon index.js
-
-
-Acessar http://localhost:3000 e testar rotas via Postman ou Insomnia.
-
-🔹 Estrutura das rotas
-
-POST /usuarios → cria um novo usuário
-
-GET /usuarios → lista todos os usuários
-
-GET /usuarios/:id → busca um usuário pelo ID
-
-PUT /usuarios/:id → atualiza um usuário
-
-DELETE /usuarios/:id → deleta um usuário
-
-🔑 Boas práticas aplicadas
-
-MVC modularizado → Controllers, Models e Infrastructure separados
-
-Criptografia de senhas → usando bcrypt, nunca armazenando texto puro
-
-Async/Await → tratamento assíncrono para operações de banco de dados
-
-Middleware JSON → leitura segura de requisições JSON
-
-.gitignore → evita envio de node_modules e arquivos sensíveis para o Git
-
-💡 Observações
-
-Projeto voltado para aprendizado e prática de desenvolvimento backend
-
-Estrutura pronta para escala futura, podendo adicionar autenticação, JWT, e testes unitários
+1. Clone o repositório  
+   ```bash
+   git clone https://github.com/art1-code/crud-basic.git
+   cd crud-basic
