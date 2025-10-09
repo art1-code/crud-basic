@@ -1,9 +1,9 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const router = require('./crudRoutes');
+const router = require('./crud-routes');
 const connection = require('./crud-Infrastructure/connection');
-const tabelas = require('./crud-Infrastructure/table');
+const tabelas = require('./crud-Infrastructure/table'); 
 
 tabelas.init(connection);
 
@@ -17,3 +17,4 @@ app.listen(port, (error) => {
   console.log(`Rodou show no http://localhost:${port}`);
 
 });
+
