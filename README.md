@@ -1,6 +1,6 @@
 CRUD-Basic (Usuários)
 
-Projeto acadêmico de CRUD de usuários desenvolvido em Node.js, organizado de forma modular, seguindo boas práticas de desenvolvimento e arquitetura de software.
+Projeto de CRUD de usuários desenvolvido em Node.js, organizado de forma modular, seguindo boas práticas de desenvolvimento e arquitetura de software.
 
 🧩 Tecnologias utilizadas
 
