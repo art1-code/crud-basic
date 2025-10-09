@@ -49,6 +49,7 @@ class UsuarioController {
 
   deletarUsuario(id) { 
     // metodo usado para deletar um usuario e retornar uma mensagem de sucesso
+    usuarioModel.deletarUsuario(id);
     return(`cheguei na rota delete / para deletar um usuario com id ${id}`);
   }
   
