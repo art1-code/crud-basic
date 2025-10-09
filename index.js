@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const router = require('./crudRoutes');
+const connection = require('./crud-Infrastructure/connection');
+const tabelas = require('./crud-Infrastructure/table');
+
+tabelas.init(connection);
 
 router(app);
 
