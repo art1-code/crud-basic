@@ -7,6 +7,8 @@ const tabelas = require('./crud-Infrastructure/table');
 
 tabelas.init(connection);
 
+app.use(express.json());
+
 router(app);
 
 app.listen(port, (error) => {

@@ -8,4 +8,13 @@ const connection = mysql.createConnection({
   database: 'controle_usuarios',
 });
 
+connection.connect((err) => {
+  if (err) {
+    console.log('Erro ao conectar no banco de dados');
+    console.log(err);
+    return;
+  }
+  console.log('Conectado ao banco de dados com sucesso');
+});
+
 module.exports = connection;
